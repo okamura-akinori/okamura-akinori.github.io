@@ -1,0 +1,74 @@
+/* リセットっぽい基本設定 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+               "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  color: #222;
+  background: #ffffff;
+  line-height: 1.7;
+}
+
+/* レイアウト */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* タイトル */
+h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* セクション */
+section {
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+/* 作品カード */
+.works {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.work {
+  border: 1px solid #eee;
+  padding: 20px;
+}
+
+.work h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.work p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* フッター */
+footer {
+  font-size: 13px;
+  color: #999;
+  text-align: center;
+  margin-top: 80px;
+}
