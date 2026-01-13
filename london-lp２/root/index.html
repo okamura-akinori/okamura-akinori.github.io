@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ロンドン旅行のおすすめツアーや見どころを紹介。初めての方にも安心の観光プランです。">
+
+  <title>ロンドン旅行特集｜おすすめツアー・観光スポット</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="img/png" sizes="32x32" href="img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Poppins:wght@600&display=swap"
+    rel="stylesheet">
+  <!-- jQuery -->
+  <script src="js/jquery-3.6.0.min.js"></script>
+
+  <!-- jQuery UI -->
+  <script src="js/jquery-ui.min.js"></script>
+
+  <!-- Raindrops.js -->
+  <script src="js/raindrops.js"></script>
+
+
+
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+  <!-- ======= ヘッダー / ナビ（固定） ======= -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a class="logo" href="https://tableau.co.jp" target="_blank"><img src=img/logo.jpg>
+        <p>トキ・トラベルセンター</p>
+      </a>
+
+      <!-- スマホ: ハンバーガー -->
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- PC: 標準ナビ -->
+      <nav class="global-nav" id="globalNav" aria-label="グローバルナビ">
+        <a href="#section1" class="nav-link">トップ</a>
+        <a href="#section2" class="nav-link">こんなあなたへ</a>
+        <a href="#section3" class="nav-link">なぜロンドン？</a>
+        <a href="#section4" class="nav-link">名所紹介</a>
+        <a href="#section5" class="nav-link">おすすめツアー</a>
+        <a href="#section6" class="nav-link">お問い合わせ</a>
+      </nav>
+    </div>
+
+    <!-- スマホ: スライドメニュー（画面半分くらい） -->
+    <aside class="drawer" id="drawer" aria-hidden="true">
+      <nav class="drawer-nav" aria-label="モバイルナビ">
+        <a href="#section1" class="drawer-link">トップ</a>
+        <a href="#section2" class="drawer-link">こんなあなたへ</a>
+        <a href="#section3" class="drawer-link">なぜロンドン？</a>
+        <a href="#section4" class="drawer-link">名所紹介</a>
+        <a href="#section5" class="drawer-link">よくある質問</a>
+        <a href="#section6" class="drawer-link">お問い合わせ</a>
+      </nav>
+    </aside>
+    <div class="drawer-backdrop" id="drawerBackdrop" tabindex="-1" hidden></div>
+  </header>
+
+  <main id="top">
+    <!-- ======= ファーストビュー ======= -->
+    <section class="hero" id="section1">
+      <!-- モバイルでは静止画を表示 -->
+      <picture class="hero-media">
+        <source media="(min-width:768px)" srcset="assets/hero-poster.jpg">
+        <img class="hero-image" src="img/london-cm2.jpg" alt="ファーストビュー画像">
+      </picture>
+
+      <!-- デスクトップ用ビデオ（幅>=768で表示） -->
+      <video class="hero-video" id="heroVideo" muted playsinline preload="auto" aria-hidden="true" poster="img/ame.jpg">
+        <!-- 実際の MP4  -->
+        <source src="mp4/ame1_3.mp4" type="video/mp4">
+
+      </video>
+
+      <div class="hero-content">
+        <h1 class="hero-title">雨が好きになる都市 London</h1>
+        <p class="hero-sub">After the rain comes a rainbow.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="https://tableau.co.jp#contact" target="_blank">お問い合せ</a>
+        </div>
+      </div>
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <span class="txt">Scroll</span>
+      </div>
+      <div class="scroll-rain" aria-hidden="true">
+
+      </div>
+    </section>
+
+    <!-- ======================================================
+     セクション2：コンセプト
+     スライド画像＋縦書きテキストで世界観を伝える
+     ====================================================== -->
+    <section id="section2" class="reveal introspection">
+
+      <!-- レイアウト幅制御用コンテナ -->
+      <div class="container">
+
+        <!-- カード全体（画像＋テキスト） -->
+        <div class="card-w">
+
+          <!-- ----------------------------------
+           画像スライドエリア
+           ・JSで .active を切り替える想定
+           ---------------------------------- -->
+          <div class="card-img slideshow">
+            <img src="img/card1.png" class="slide active" alt="ロンドンの街並み 1">
+            <img src="img/card2.png" class="slide" alt="ロンドンの街並み 2">
+            <img src="img/card3.png" class="slide" alt="ロンドンの街並み 3">
+          </div>
+
+          <!-- ----------------------------------
+           テキストエリア
+           ・PC：縦書き
+           ・SP：横書き
+           ---------------------------------- -->
+          <div class="card-text">
+            <h2>日々、<br>疲れませんか？</h2>
+            <p>
+              心が少し重くなる日、<br>
+              ロンドンは不思議と静かに<br>
+              寄り添ってくれる街です。<br>
+              雨の匂いや、<br>
+              淡い光に包まれた街並みが、<br>
+              言葉にできない気持ちを<br>
+              そっと受け止めてくれます。
+            </p>
+          </div>
+
+        </div><!-- /.card-w -->
+      </div><!-- /.container -->
+
+    </section>
+
+
+    <!-- ======================================================
+     セクション3：Why（なぜロンドン？）
+     雨演出＋理由カード
+     ====================================================== -->
+    <section id="section3" class="why rain-bg">
+
+      <!-- ----------------------------------
+       雨アニメーション用レイヤー
+       ・背景専用
+       ・pointer-events:none 想定
+       ---------------------------------- -->
+      <div class="rainning">
+        <!-- 雨粒（数で密度を調整） -->
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+      </div>
+
+      <!-- ----------------------------------
+       コンテンツ本体
+       ・雨レイヤーより前面
+       ---------------------------------- -->
+      <div class="container anshin">
+
+        <!-- Whyカード（スクロールフェード対象） -->
+        <div class="why-card fadein">
+
+          <!-- セクションタイトル -->
+          <h2 class="naze">
+            なぜ<br>
+            ロンドン？
+          </h2>
+
+          <!-- 理由1 -->
+          <div class="why-item">
+            <h3>安心の街</h3>
+            <p class="why-p">
+              どこかで雨宿りするだけで<br>
+              大丈夫だと思わせてくれます。
+            </p>
+          </div>
+
+          <!-- 理由2 -->
+          <div class="why-item">
+            <h3>変わらぬ景色に</h3>
+            <p class="why-p">
+              ずっと立ち続けるものを見ていると<br>
+              「急がなくていいよ」<br>
+              と言われている気がします。
+            </p>
+          </div>
+
+          <!-- 理由3 -->
+          <div class="why-item">
+            <h3>心のカルチャー</h3>
+            <p class="why-p">
+              アートに身を委ねると<br>
+              感情がふと浮かんでくる。
+            </p>
+          </div>
+
+        </div><!-- /.why-card -->
+      </div><!-- /.container -->
+
+    </section>
+
+
+
+
+    <!-- ======= セクション3: マップ ======= -->
+    <section id="section4" class="reveal">
+      <div class="container">
+        <h2 class="section-title">雨とともに歩く名所</h2>
+        <div class="click-hint">
+          <span class="dot"></span>
+          <h3>click！</h3>
+
+        </div>
+        <section class="map-section">
+          <div class="map">
+            <div class="map-inner">
+              <div class="map-canvas">
+                <img src="img/london-map.png" class="map-img" alt="">
+
+                <button class="map-point pt1" data-popup="popup1">1</button>
+                <button class="map-point pt2" data-popup="popup2">2</button>
+                <button class="map-point pt3" data-popup="popup3">3</button>
+                <button class="map-point pt4" data-popup="popup4">4</button>
+                <button class="map-point pt5" data-popup="popup5">5</button>
+                <button class="map-point pt6" data-popup="popup6">6</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- モーダル -->
+          <div id="popup1" class="mymodal" aria-hidden="true">
+            <div class="panel">
+              <button class="close">閉じる</button>
+              <h3>大英博物館</h3>
+              <img src="img/musium.jpg" alt="">
+              <p>
+                大英博物館は、世界中の文明と歴史を伝える約800万点の収蔵品を誇る博物館です。<br>
+                古代エジプトのロゼッタ・ストーンやギリシャ彫刻など、教科書で見た名品を間近に見ることができます。<br>
+                人類の歩みを一度に体感できる、ロンドン観光を代表するスポットです。
+              </p>
+            </div>
+          </div>
+
+          <div id="popup2" class="mymodal" aria-hidden="true">
+            <div class="panel">
+              <button class="close">閉じる</button>
+              <h3>セントポール大聖堂</h3>
+              <img src="img/st-paul.jpg" alt="">
+              <p>ロンドンを象徴する壮麗なバロック建築の大聖堂です。
+                巨大なドームは街のランドマークで、内部の美しい装飾と音の響きが印象的です。<br>
+                展望ギャラリーからはロンドン市内を一望できます。</p>
+            </div>
+          </div>
+
+          <div id="popup3" class="mymodal" aria-hidden="true">
+            <div class="panel">
+              <button class="close">閉じる</button>
+              <h3>タワーブリッジ</h3>
+              <img src="img/tower.jpg" alt="">
+              <p>
+              <p>
+                ロンドンを代表する跳ね橋で、テムズ川に架かる象徴的な建造物です。<br>
+                19世紀に建設され、現在も大型船が通る際には橋が開く仕組みを見ることができます。<br>
+                上部通路からはロンドンの街並みと川の景色を楽しめます。
+              </p>
+              </p>
+            </div>
+          </div>
+          <div id="popup4" class="mymodal" aria-hidden="true">
+            <div class="panel">
+              <button class="close">閉じる</button>
+              <h3>バッキンガム宮殿</h3>
+              <img src="img/backingam.jpg" alt="">
+              <p>イギリス王室の公式宮殿であり、ロンドンを代表する観光名所です。
+                衛兵交代式は伝統ある儀式として多くの観光客に人気があります。
+                王室の歴史と英国文化を感じられる場所です</p>
+            </div>
+          </div>
+          <div id="popup5" class="mymodal" aria-hidden="true">
+            <div class="panel">
+              <button class="close">閉じる</button>
+              <h3>ビッグベン</h3>
+              <img src="img/bigben.jpg" alt="">
+              <p>国会議事堂に併設された時計塔で、ロンドンを象徴するランドマークです。
+                正確な時を刻む大時計と重厚な鐘の音は、イギリスの伝統を今に伝えています。
+                テムズ川沿いから眺める姿も人気の撮影スポットです</p>
+            </div>
+          </div>
+          <div id="popup6" class="mymodal" aria-hidden="true">
+            <div class="panel">
+              <button class="close">閉じる</button>
+              <h3>ロンドンアイ</h3>
+              <img src="img/London-eye.jpg" alt="">
+              <p>テムズ川沿いに建つ巨大な観覧車で、ロンドンの景色を一望できる名所です。
+                ゆっくり回転するゴンドラから、ビッグ・ベンや市街地を見渡せます。
+                昼も夜も異なる表情を楽しめる人気スポットです</p>
+            </div>
+          </div>
+
+        </section>
+
+
+    </section>
+    <!--SP用リストを追加--><!--SP用リストを追加--><!--SP用リストを追加--><!--SP用リストを追加--><!--SP用リストを追加-->
+    <section class="spot-list">
+
+      <article class="spot fade-spot">
+        <div class="img-wrap">
+          <img src="img/musium-1.png" class="img-base" alt="大英博物館のイメージイラスト">
+          <img src="img/musium.jpg" class="img-overlay" alt="ロンドンにある大英博物館の外観">
+        </div>
+        <div class="container">
+          <h3>大英博物館</h3>
+          <p>
+            大英博物館は、世界中の文明と歴史を伝える約800万点の収蔵品を誇る博物館です。<br>
+            古代エジプトのロゼッタ・ストーンやギリシャ彫刻など、教科書で見た名品を間近に見ることができます。<br>
+            人類の歩みを一度に体感できる、ロンドン観光を代表するスポットです。
+          </p>
+        </div>
+      </article>
+
+      <article class="spot fade-spot">
+        <div class="img-wrap">
+          <img src="img/stp-1.png" class="img-base" alt="セントポール大聖堂のイメージイラスト">
+          <img src="img/st-paul.jpg" class="img-overlay" alt="セントポール大聖堂の壮麗な外観">
+        </div>
+        <div class="container">
+          <h3>セントポール大聖堂</h3>
+          <p>
+            ロンドンを象徴する壮麗なバロック建築の大聖堂です。<br>
+            巨大なドームは街のランドマークで、内部の美しい装飾と音の響きが印象的です。<br>
+            展望ギャラリーからはロンドン市内を一望できます。
+          </p>
+        </div>
+      </article>
+
+      <article class="spot fade-spot">
+        <div class="img-wrap">
+          <img src="img/tower-1.png" class="img-base" alt="タワーブリッジのイメージイラスト">
+          <img src="img/tower.jpg" class="img-overlay" alt="テムズ川に架かるタワーブリッジ">
+        </div>
+        <div class="container">
+          <h3>タワーブリッジ</h3>
+          <p>
+            ロンドンを代表する跳ね橋で、テムズ川に架かる象徴的な建造物です。<br>
+            19世紀に建設され、現在も大型船が通る際には橋が開く仕組みを見ることができます。<br>
+            上部通路からはロンドンの街並みと川の景色を楽しめます。
+          </p>
+        </div>
+      </article>
+
+      <article class="spot fade-spot">
+        <div class="img-wrap">
+          <img src="img/bk-1.png" class="img-base" alt="バッキンガム宮殿のイメージイラスト">
+          <img src="img/bk.jpg" class="img-overlay" alt="イギリス王室の公式宮殿 バッキンガム宮殿">
+        </div>
+        <div class="container">
+          <h3>バッキンガム宮殿</h3>
+          <p>
+            イギリス王室の公式宮殿であり、ロンドンを代表する観光名所です。<br>
+            衛兵交代式は伝統ある儀式として多くの観光客に人気があります。<br>
+            王室の歴史と英国文化を感じられる場所です。
+          </p>
+        </div>
+      </article>
+
+      <article class="spot fade-spot">
+        <div class="img-wrap">
+          <img src="img/bb-1.png" class="img-base" alt="ビッグ・ベンのイメージイラスト">
+          <img src="img/bigben.jpg" class="img-overlay" alt="国会議事堂に併設されたビッグ・ベンの時計塔">
+        </div>
+        <div class="container">
+          <h3>ビッグ・ベン</h3>
+          <p>
+            国会議事堂に併設された時計塔で、ロンドンを象徴するランドマークです。<br>
+            正確な時を刻む大時計と重厚な鐘の音は、イギリスの伝統を今に伝えています。<br>
+            テムズ川沿いから眺める姿も人気の撮影スポットです。
+          </p>
+        </div>
+      </article>
+
+      <article class="spot fade-spot">
+        <div class="img-wrap">
+          <img src="img/ry-1.png" class="img-base" alt="ロンドン・アイのイメージイラスト">
+          <img src="img/london-eye.jpg" class="img-overlay" alt="テムズ川沿いに建つロンドン・アイ">
+        </div>
+        <div class="container">
+          <h3>ロンドン・アイ</h3>
+          <p>
+            テムズ川沿いに建つ巨大な観覧車で、ロンドンの景色を一望できる名所です。<br>
+            ゆっくり回転するゴンドラから、ビッグ・ベンや市街地を見渡せます。<br>
+            昼も夜も異なる表情を楽しめる人気スポットです。
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ======= セクション5: ロンドンおすすめツアー ======= -->
+    <section id="section5" class="reveal">
+      <div class="container">
+
+        <div class="slider" id="featureSlider" aria-roledescription="carousel">
+
+          <div class="tour-title">
+            <h2>ロンドン<br>おすすめツアー</h2>
+            <p>首都圏発</p>
+          </div>
+
+          <div class="slides">
+
+            <!-- ① 雨の街歩き -->
+            <div class="slide">
+              <div class="product__list--image-wrapper">
+                <img loading="lazy" src="img/list1.jpg" class="product__list--image" alt="">
+                <h3>【羽田発／ブリティッシュ・エアウェイズ】<br>＜ロンドン5日間＞</h3>
+                <p>
+                  雨に濡れる街を楽しむフリープラン<br>
+                  ◆カフェと石畳の街歩きをゆっくりと
+                </p>
+                <p>
+                  1名様あたり<br>
+                  168,000円～418,000円<br>
+                  燃油サーチャージ込み
+                </p>
+              </div>
+            </div>
+
+            <!-- ② ビートルズ旅 -->
+            <div class="slide">
+              <div class="product__list--image-wrapper">
+                <img loading="lazy" src="img/btl.jpg" class="product__list--image" alt="">
+                <h3>【成田夜発／カタール航空】<br>＜ロンドン5日間＞</h3>
+                <p>
+                  ビートルズの足跡を辿る音楽旅<br>
+                  ◆アビイ・ロード周辺を自由に散策
+                </p>
+                <p>
+                  1名様あたり<br>
+                  158,000円～398,000円<br>
+                  燃油サーチャージ込み
+                </p>
+              </div>
+            </div>
+
+            <!-- ③ 芸術と歴史 -->
+            <div class="slide">
+              <div class="product__list--image-wrapper">
+                <img loading="lazy" src="img/musium.jpg" class="product__list--image" alt="">
+                <h3>【関空発／エミレーツ航空】<br>＜ロンドン6日間＞</h3>
+                <p>
+                  芸術と歴史に浸るフリープラン<br>
+                  ◆大英博物館・ナショナルギャラリー
+                </p>
+                <p>
+                  1名様あたり<br>
+                  175,000円～445,000円<br>
+                  燃油サーチャージ込み
+                </p>
+              </div>
+            </div>
+
+            <!-- ④ 初めてのロンドン -->
+            <div class="slide">
+              <div class="product__list--image-wrapper">
+                <img loading="lazy" src="img/tower.jpg" class="product__list--image" alt="">
+                <h3>【成田発／フィンエアー】<br>＜ロンドン5日間＞</h3>
+                <p>
+                  初めてでも歩きやすいフリープラン<br>
+                  ◆定番スポットを無理なく巡る
+                </p>
+                <p>
+                  1名様あたり<br>
+                  148,000円～368,000円<br>
+                  燃油サーチャージ込み
+                </p>
+              </div>
+            </div>
+
+            <!-- ⑤ 夜のロンドン -->
+            <div class="slide">
+              <div class="product__list--image-wrapper">
+                <img loading="lazy" src="img/London-eye.jpg" class="product__list--image" alt="">
+                <h3>【羽田夜発／ルフトハンザ航空】<br>＜ロンドン5日間＞</h3>
+                <p>
+                  夜景と静けさを味わう滞在<br>
+                  ◆ライトアップされた街並み散策
+                </p>
+                <p>
+                  1名様あたり<br>
+                  162,000円～405,000円<br>
+                  燃油サーチャージ込み
+                </p>
+              </div>
+            </div>
+
+            <!-- ⑥ 余白を楽しむ -->
+            <div class="slide">
+              <div class="product__list--image-wrapper">
+                <img loading="lazy" src="img/st-paul.jpg" class="product__list--image" alt="">
+                <h3>【成田夜発／ターキッシュエアラインズ】<br>＜ロンドン7日間＞</h3>
+                <p>
+                  予定を詰め込まないロングステイ<br>
+                  ◆気分のままに過ごすロンドン時間
+                </p>
+                <p>
+                  1名様あたり<br>
+                  188,000円～472,000円<br>
+                  燃油サーチャージ込み
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="slider-btn prev" aria-label="前へ">&lt;</button>
+          <button class="slider-btn next" aria-label="次へ">&gt;</button>
+          <div class="slider-dots" id="sliderDots"></div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= セクション6：FAQ（よくある質問）NO css/jisで作った ======= -->
+    <section id="section6" class="reveal">
+      <!-- レイアウト幅を制御する共通コンテナ -->
+      <div class="container">
+
+        <!-- セクションタイトル -->
+        <h2>よくある質問</h2>
+
+        <!-- 質問1 -->
+        <details>
+          <!-- クリックすると開閉できる質問文 -->
+          <summary>ツアーの所要時間はどのくらいですか？</summary>
+          <!-- 開いたときに表示される回答 -->
+          <p>
+            全体の所要時間は約半日（4〜5時間）を予定しており、時間に追われることなく、ゆったりとしたペースで主要な観光スポットを巡ります。各スポットでは写真撮影や散策の時間もしっかり確保し、その土地ならではの雰囲気や魅力をじっくり味わっていただける行程です。初めて訪れる方はもちろん、久しぶりに訪れる方にもおすすめの、無理のない余裕を持ったプランとなっています。
+          </p>
+        </details>
+
+        <!-- 質問2 -->
+        <details>
+          <summary>歩く距離は長いですか？</summary>
+          <p>各スポット間の移動は公共交通機関を利用するため、長時間の徒歩移動はなく、歩く距離も無理のない範囲に抑えています。体力に自信のない方やご年配の方でも安心して参加でき、移動の負担を感じにくい行程となっています。
+          </p>
+        </details>
+
+        <!-- 質問3 -->
+        <details>
+          <summary>雨の日でもツアーは実施されますか？</summary>
+          <p>
+            はい、雨天の場合でもツアーは実施します。行程には屋内施設も多く含まれているため、天候の影響を受けにくく、雨の日でも安心してお楽しみいただけます。なお、当日の天候状況に応じて、訪問順の変更や滞在時間の調整など、無理のない範囲で行程を柔軟に調整しますので、快適かつ安全にご参加いただけます。
+          </p>
+        </details>
+
+        <!-- 質問4 -->
+        <details>
+          <summary>英語が話せなくても大丈夫ですか？</summary>
+          <p>日本語ガイド付きのツアーなので、初めてのロンドンでも安心してご参加いただけます。</p>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ======= セクション7: お問い合わせ ======= -->
+    <section id="section7" class="reveal">
+      <div class="container">
+        <h2>お問い合わせ</h2>
+        <form id="contactForm" class="form">
+          <label>
+            <span>お名前</span>
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            <span>メール</span>
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            <span>ご相談内容</span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button class="btn primary" type="submit">送信する</button>
+        </form>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+  </main>
+  <section>
+    <div class="container">
+      <!-- ======= フッター 前の飾り======= -->
+    </div>
+    <!-- raindrops の水面 -->
+    <div id="raindrop-footer"></div>
+
+    <!-- フッター文字 -->
+    <div class="footer-content">
+      <small>© <span id="year"></span> tokitravel. All rights reserved.</small>
+    </div>
+    </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
