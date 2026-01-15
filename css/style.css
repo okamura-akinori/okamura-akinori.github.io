@@ -1,0 +1,291 @@
+css/style.css
+
+/* ===== リセット ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  color: #222;
+  line-height: 1.6;
+  background: #fafafa;
+}
+
+/* ===== 共通 ===== */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+
+}
+
+
+
+/* ===== ヘッダー ===== */
+.header {
+  padding: 24px 40px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.site-title {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.nav ul {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.nav a {
+  font-size: 14px;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: width 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== ヒーロー ===== */
+.hero {
+  padding: 120px 40px;
+  text-align: center;
+  background: #f0f0f0;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* ===== Works ===== */
+.works {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.work-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.work-card h3 {
+  font-size: 18px;
+  margin: 16px;
+}
+
+.work-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 0 16px 24px;
+}
+
+.work-card img {
+  width: 100px;
+  /* ← 60〜90%で調整 */
+
+  margin: 16px auto 0;
+  /* 中央寄せ */
+}
+
+/* ===== フッター ===== */
+.footer {
+  text-align: center;
+  padding: 32px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 768px) {
+
+  .header {
+    padding: 20px;
+  }
+
+  .nav ul {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .works {
+    grid-template-columns: 1fr;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+}
+
+
+/* ===== Webページ ===== */
+.page-header {
+  padding: 80px 40px;
+  text-align: center;
+  background: #f0f0f0;
+}
+
+.page-header h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: #666;
+}
+
+.web-works {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 40px;
+}
+
+.web-work {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.web-work img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.web-work__body h3 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.meta {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+  padding-left: 0;
+}
+
+.meta li {
+  margin-bottom: 4px;
+}
+
+.description {
+  margin-bottom: 24px;
+}
+
+.links a {
+  display: inline-block;
+  margin-right: 16px;
+  font-size: 14px;
+  border-bottom: 1px solid #000;
+}
+
+@media (max-width: 768px) {
+  .web-work {
+    grid-template-columns: 1fr;
+  }
+
+  .web-work img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+
+/* ===== Videoページ ===== */
+.video-works {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 40px;
+}
+
+.video-work {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  /* 16:9 */
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-work__body h3 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .video-work {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about img {
+  width: 50%;
+  /* ← 60〜90%で調整 */
+  max-width: 220px;
+  /* ← 画像の上限サイズ */
+  margin-top: 15px;
+  /* 中央寄せ */
+}
